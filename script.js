@@ -136,14 +136,17 @@ const gameController = (() => {
       if (result === player.marker) {
         gameOver = true;
         showAlert(`${player.name} wins!`);
+        resetBoard();
         updateUI();
       } else if (result === computer.marker) {
         gameOver = true;
         showAlert(`${computer.name} wins!`);
+        resetBoard();
         updateUI();
       } else if (result === 'draw') {
         gameOver = true;
         showAlert("It's a draw!");
+        resetBoard();
       } else {
         switchPlayer();
         if (currentPlayer === computer) {
